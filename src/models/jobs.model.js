@@ -11,7 +11,8 @@ const jobSchema = new mongoose.Schema({
         default: 'stageFirst',
         required: false
     },
-    location: { type: String, required: true }
+    location: { type: String, required: true },
+    Type:{type:String,requied:true,default:"Company"}
     
 }, {
     versionKey: false,
