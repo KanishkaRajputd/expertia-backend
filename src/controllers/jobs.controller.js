@@ -21,7 +21,14 @@ router.post("/", async (req, res) => {
 })
 router.get("/", async (req, res) => {
     try {
-        const job = await jobsModel.find().lean().exec();
+        const filtering = req.query.filter.split(",");
+        console.log(filtering);
+        const filterby = filtering[0] || "";
+        const filterorder = filtering[1] || "";
+        
+
+
+        const job = await jobsModel.find().filter({[filterby]:filterorder}).lean().exec();
         res.status(200).send(job);
 
     } catch (err) {
