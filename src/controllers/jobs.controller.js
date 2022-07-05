@@ -25,16 +25,16 @@ router.get("/", async (req, res) => {
         console.log(filtering);
         const filterby = filtering[0] || "";
         const filterorder = filtering[1] || "";
-        
 
 
-        const job = await jobsModel.find().filter({[filterby]:filterorder}).lean().exec();
+
+        const job = await jobsModel.find({[filterby]:filterorder}).lean().exec();
         res.status(200).send(job);
 
     } catch (err) {
-        
+
         res.status(500).send({
-            message:err.message
+            message: err.message
         })
     }
 })
