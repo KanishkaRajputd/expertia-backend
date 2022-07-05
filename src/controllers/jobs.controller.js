@@ -28,7 +28,7 @@ router.get("/", async (req, res) => {
 
 
 
-        const job = await jobsModel.find({[filterby]:filterorder}).lean().exec();
+        const job = await jobsModel.find({ [filterby]: filterorder }).lean().exec();
         res.status(200).send(job);
 
     } catch (err) {

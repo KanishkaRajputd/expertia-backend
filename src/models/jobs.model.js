@@ -12,7 +12,7 @@ const jobSchema = new mongoose.Schema({
         required: false
     },
     location: { type: String, required: true },
-    Type:{type:String,requied:true,default:"Company"}
+    Category:{type:String,required:true,default:"Company"}
     
 }, {
     versionKey: false,
