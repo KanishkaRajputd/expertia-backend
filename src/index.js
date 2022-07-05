@@ -7,7 +7,7 @@ const jobController = require("./controllers/jobs.controller");
 app.use(express.json());
 app.use(cors());
 
-app.use("/jobs", jobController);
+app.use("/", jobController);
 
 app.listen(port,async()=>{
 
